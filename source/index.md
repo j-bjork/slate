@@ -2,48 +2,63 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - json: JSON
+  - xml: XML
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://remix.mashery.com/member/register'>Sign Up for an API Key</a>
+  - <a href='http://bestbuyapis.github.io/bby-query-builder/#/productSearch' target="_blank">Query Builder</a>
 
 includes:
+  - products
+  - categories
+  - recommendations
   - errors
 
 search: true
 ---
 
-# Introduction
+# Overview
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Best Buy Developer API site! Whether you're an API pro, a beginning developer or a Best Buy partner, our extensive API catalog is waiting for your imagination. Our API suite allows you to query <a href="https://developer.bestbuy.com/documentation/products-api" class="inline-link">Products</a>, <a href="https://developer.bestbuy.com/documentation/stores-api" class="inline-link">Stores</a>, <a href="https://developer.bestbuy.com/documentation/reviews-api" class="inline-link">Reviews</a> and much more. Come on in to explore our data, browse descriptions of the available attributes and see examples of working requests and responses.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+If this is your first time using our APIs, please check out our Getting Started guide. If you already have your API key, our Search and Response Formats can help you refine your search or results.
 
 # Authentication
 
-> To authorize, use this code:
+```md
+[#request]:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+http://api.bestbuy.com/v1/stores(region=ut)?format=json&show=storeId,city,region&apiKey=YourAPIKey
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
+```md
+[#response]:
 ```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+```json
+{
+  "from": 1,
+  "to": 10,
+  "total": 10,
+  "currentPage": 1,
+  "totalPages": 1,
+  "queryTime": "0.002",
+  "totalTime": "0.007",
+  "partial": false,
+  "canonicalUrl": "/v1/stores(region=\"ut\")?format=json&show=storeId,city,region&apiKey=YourAPIKey",
+  "stores": [
+    {
+      "storeId": 1402,
+      "city": "American Fork",
+      "region": "UT"
+    },
+    {
+      "storeId": 773,
+      "city": "Orem",
+      "region": "UT"
+    },
+  ]
+}
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -58,111 +73,8 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
 
-## Get All Kittens
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
 

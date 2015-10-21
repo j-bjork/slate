@@ -37,6 +37,26 @@ html, body {
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
 
+.inline-link:link {
+  color: #003b64;
+  text-decoration: none;
+}
+
+.inline-link:visited {
+  color: #003b64;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  color: #1646a8;
+  text-decoration: underline;
+}
+
+.inline-link:active {
+  color: #003b64;
+  text-decoration: none;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // TABLE OF CONTENTS
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,9 +77,15 @@ html, body {
     $nav-subitem-bg;
 }
 
+.logo-holder {
+  moz-box-sizing: border-box;
+      box-sizing: border-box;
+  padding: 15px 15px 15px 15px;
+}
+
+
 .tocify-wrapper {
   transition: left 0.3s ease-in-out;
-
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -81,9 +107,13 @@ html, body {
     }
   }
 
+  
+
   // This is the logo at the top of the ToC
-  &>img {
+  &>.logo-holder img {
     display: block;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   &>.search {
@@ -434,7 +464,7 @@ html, body {
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      background-color: #f8fafd;
     }
   }
 
@@ -515,6 +545,7 @@ html, body {
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // CODE SAMPLE STYLES
@@ -618,3 +649,13 @@ html, body {
     margin-top: $main-padding;
   }
 }
+
+thead th {
+  font-size: 18px;
+}
+
+table tr td:nth-child(1) {
+  width: 20%;
+}
+
+
