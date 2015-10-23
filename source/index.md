@@ -6,8 +6,8 @@ language_tabs:
   - xml: XML
 
 toc_footers:
-  - <a href='https://remix.mashery.com/member/register'>Sign Up for an API Key</a>
-  - <a href='http://bestbuyapis.github.io/bby-query-builder/#/productSearch' target="_blank">Query Builder</a>
+  - <a href='/stores.html'>Stores API</a>
+  - <a href='/stores.html'>Reviews API</a>
 
 includes:
   - products
@@ -25,6 +25,16 @@ Welcome to the Best Buy Developer API site! Whether you're an API pro, a beginni
 If this is your first time using our APIs, please check out our Getting Started guide. If you already have your API key, our Search and Response Formats can help you refine your search or results.
 
 # Authentication
+
+
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
 
 ```md
 [#request]:
@@ -60,14 +70,6 @@ http://api.bestbuy.com/v1/stores(region=ut)?format=json&show=storeId,city,region
   ]
 }
 ```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
