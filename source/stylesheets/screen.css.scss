@@ -227,6 +227,7 @@ html, body {
     }
   }
 
+
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
@@ -247,8 +248,8 @@ html, body {
     li:hover {
     background-color: #fff;
 
-      &>a {
-      color: #053f68;
+      &>a{
+      color: $bby-blue;
       }
 
     }
@@ -487,6 +488,16 @@ html, body {
     margin-top: 0;
   }
 
+  a {
+  color: $bby-blue;
+  text-decoration: none;
+  }
+
+  a:hover {
+  text-decoration: underline;
+  color: #085eb9;
+  }
+
   img {
     max-width: 100%;
   }
@@ -546,10 +557,15 @@ html, body {
     padding: 2px;
     margin: -2px;
     border-radius: 4px;
-    border: 1px solid #F7E633;
+    border: 1px solid $highlight;
     @include text-shadow(1px 1px 0 #666);
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+    background: linear-gradient(to top left, $highlight 0%, #a7d2d8 100%);
   }
+}
+
+.inline-code {
+  background-color: #e1e1e3;
+  color: #053f68;
 }
 
 

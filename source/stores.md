@@ -6,13 +6,12 @@ language_tabs:
   - xml: XML
 
 toc_footers:
-  - <a href='/'>Products API</a>
+  - <a href='/index.html'>Products API</a>
 
 includes:
   - products
   - categories
   - recommendations
-  - errors
 
 search: true
 ---

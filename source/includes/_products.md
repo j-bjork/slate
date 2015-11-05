@@ -4,7 +4,7 @@ The Best Buy Developer API provides a simple, REST-based interface for our entir
 
 *PLEASE NOTE: Music and movie data may be used only where an ability to purchase the related music or movies from BESTBUY.COM is provided to end users. Developers using music and movie data to redirect to BESTBUY.COM must become members of the Best Buy Affiliate Program to allow the sale of music and movies through BESTBUY.COM under the terms of the Affiliate Program.*
 
-## Common Attributes
+<strong>Common Attributes:</strong>
 
 Attribute | Description
 --------- | -----------
@@ -20,3 +20,6 @@ Attribute | Description
 **Last Updated** | <li>Determine if any product information has changed within a given date range</li><li>We don't currently offer this attribute but hope to in the future</li>
 **Dimensions** | <li>Used mainly for shipping and packaging purposes</li><li>Return a product's height, depth, length and weight</li>
 **Color** | <li>Generally used in conjunction with Products or Categories attributes</li><li>Return all items of a certain color within a specific product or category range (e.g., all Red iPhone cases)</li>
+
+
+<a href="#">View Use Case Examples</a>
